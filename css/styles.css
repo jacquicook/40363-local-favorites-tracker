@@ -56,6 +56,30 @@ header h1 {
    ========================================== */
 
 /* TODO LAB11: Add main and section styles */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    background: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+
+
+
+
+
+
 
 
 /* ==========================================
