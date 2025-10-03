@@ -56,6 +56,7 @@ header h1 {
    ========================================== */
 
 /* TODO LAB11: Add main and section styles */
+
 main {
     padding: 2rem 0;
 }
@@ -82,7 +83,6 @@ h2 {
    ========================================== */
 
 /* TODO LAB11: Add .form-group, label, input, select, textarea styles */
-
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -126,6 +126,7 @@ textarea {
    ========================================== */
 
 /* TODO LAB11: Add .btn and .btn-primary styles */
+
 .btn {
     padding: 0.75rem 1.5rem;
     border: none;
@@ -153,7 +154,6 @@ textarea {
 }
 
 
-
 /* ==========================================
    SEARCH CONTROLS
    LAB11: Add search input and filter layout
@@ -175,6 +175,7 @@ textarea {
     flex: 1;
 }
 
+
 /* ==========================================
    FAVORITES GRID & CARDS
    LAB11: Add grid layout structure
@@ -182,6 +183,7 @@ textarea {
    ========================================== */
 
 /* TODO LAB11: Add .favorites-grid and .empty-message styles */
+
 .favorites-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -260,8 +262,9 @@ textarea {
    FOOTER
    LAB11: Add simple centered footer
    ========================================== */
-   
+
 /* TODO LAB11: Add footer styles */
+
 footer {
     background-color: #333;
     color: white;
@@ -275,7 +278,6 @@ footer p {
 }
 
 
-
 /* ==========================================
    RESPONSIVE DESIGN
    LAB11: Add mobile-first responsive breakpoints
@@ -283,49 +285,9 @@ footer p {
    TODO LAB13-15: May add responsive adjustments for new features
    ========================================== */
 
+   
+
 /* TODO LAB11: Add @media queries for tablet and mobile */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
-    .search-controls {
-        flex-direction: column;
-    }
-
-    .search-controls input,
-    .search-controls select {
-        flex: 1;
-    }
-
-    .favorites-grid {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    section {
-        padding: 1rem;
-    }
-}
-
-
 
 /* CSS Reset */
 * {
