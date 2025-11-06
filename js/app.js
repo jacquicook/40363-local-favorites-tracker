@@ -34,6 +34,37 @@ function displayFavorites() {
     searchFavorites();
 }
 
+// Function to save favorites to localStorage
+function saveFavorites() {
+    try {
+        localStorage.setItem('localFavorites', JSON.stringify(favorites));
+        console.log('Favorites saved to localStorage');
+        console.log('Saved', favorites.length, 'favorites');
+    } catch (error) {
+        console.error('Error saving to localStorage:', error);
+        alert('Unable to save favorites. Your browser may have storage disabled.');
+    }
+}
+
+// Function to load favorites from localStorage
+function loadFavorites() {
+    try {
+        const savedData = localStorage.getItem('localFavorites');
+
+        if (savedData) {
+            favorites = JSON.parse(savedData);
+            console.log('Favorites loaded from localStorage');
+            console.log('Loaded', favorites.length, 'favorites');
+        } else {
+            console.log('No saved favorites found');
+            favorites = [];
+        }
+    } catch (error) {
+        console.error('Error loading from localStorage:', error);
+        console.log('Starting with empty favorites array');
+        favorites = [];
+    }
+}
 
 // Function to delete a favorite by index
 function deleteFavorite(index) {
@@ -44,17 +75,17 @@ function deleteFavorite(index) {
     const favorite = favorites[index];
     const confirmDelete = confirm(`Are you sure you want to delete "${favorite.name}"?`);
 
-    if (confirmDelete) {
+       if (confirmDelete) {
         // Remove from array
         favorites.splice(index, 1);
         console.log('Favorite deleted. Total remaining:', favorites.length);
 
+        // Save to localStorage
+        saveFavorites();
+
         // Re-apply current search/filter
         searchFavorites();
-    } else {
-        console.log('Deletion cancelled by user');
     }
-}
 // Function to search favorites by name or notes
 function searchFavorites() {
     // Get the search input value
@@ -167,6 +198,7 @@ function addFavorite(event) {
     displayFavorites();
 }
 
+
 // Connect the addFavorite function to the form submit event
 form.addEventListener('submit', addFavorite);
 
@@ -180,6 +212,9 @@ categoryFilter.addEventListener('change', searchFavorites);
 
 console.log('Search and filter event listeners attached!');
 
+// Load saved favorites from localStorage on startup
+loadFavorites();
 
-// Display empty message when page first loads
-displayFavorites();
+// Display the loaded favorites (or empty message)
+displayFavorites(); 
+}
